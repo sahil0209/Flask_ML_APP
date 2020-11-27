@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Species Prediction</legend>
+                <div class="form-group">
+                    {{ form.sepal_length.label(class="form-control-label") }}
+                    {% if form.sepal_length.errors%}
+                    {{ form.sepal_length(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.sepal_length.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.sepal_length(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.sepal_width.label(class="form-control-label") }}
+                    {% if form.sepal_width.errors%}
+                    {{ form.sepal_width(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.sepal_width.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.sepal_width(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.petal_length.label(class="form-control-label") }}
+                    {% if form.petal_length.errors%}
+                    {{ form.petal_length(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.petal_length.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.petal_length(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.petal_width.label(class="form-control-label") }}
+                    {% if form.petal_width.errors%}
+                    {{ form.petal_width(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.petal_width.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.petal_width(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary")}}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
